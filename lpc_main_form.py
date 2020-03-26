@@ -54,10 +54,10 @@ class App:
         self.lfr_input = LabelFrame(self.root, text = "Ввод")
         self.lbl_inputPath = Label(self.lfr_input, text = "Файл:")
         self.ent_inputPath = Entry(self.lfr_input, width = 80)
-        self.ent_inputPath.insert("end", "D:\\Cloud\\Git\\micromine\\lpc\\лаборатория рябиновое\\Протокол Ag атомно-абсорбционный[AA Ag].xlsx")
-        # D:\\Cloud\\Git\\micromine\\lpc\\лаборатория рябиновое\\Протокол №П-1130 Рябиновый РМЮ-42477-РМЮ-42542[Пробирный Au].xls   505
-        # D:\\Cloud\\Git\\micromine\\lpc\\лаборатория рябиновое\\Протокол ЭРСА № 285 ТГ (21402-21450)[РСА Au].xls   392
-        # D:\\Cloud\\Git\\micromine\\lpc\\лаборатория рябиновое\\Протокол Ag атомно-абсорбционный[AA Ag].xlsx    130-с
+        self.ent_inputPath.insert("end", "D:\\Cloud\\Git\\micromine-lab-protocols\\lpc\\лаборатория рябиновое\\Протокол Ag атомно-абсорбционный[AA Ag].xlsx")
+        # D:\\Cloud\\Git\\micromine-lab-protocols\\lpc\\лаборатория рябиновое\\Протокол №П-1130 Рябиновый РМЮ-42477-РМЮ-42542[Пробирный Au].xls   505
+        # D:\\Cloud\\Git\\micromine-lab-protocols\\lpc\\лаборатория рябиновое\\Протокол ЭРСА № 285 ТГ (21402-21450)[РСА Au].xls   392
+        # D:\\Cloud\\Git\\micromine-lab-protocols\\lpc\\лаборатория рябиновое\\Протокол Ag атомно-абсорбционный[AA Ag].xlsx    130-с
 
         self.but_inputBrowse = Button(self.lfr_input, text = "...", width = 3, command = self.browse_open_file)
 
