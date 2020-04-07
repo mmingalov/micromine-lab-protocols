@@ -19,8 +19,11 @@ def xldate_to_datetime(xldate):
 # pyinstaller --onefile --windowed --distpath "C:\Geobank" --workpath "C:\Geobank" --hidden-import pyexcel_xls --hidden-import pyexcel_io --hidden-import pyexcel lpc_main_form.py
 # pyinstaller --onefile --windowed --distpath "C:\Geobank" --workpath "C:\Geobank" lpc_main_form.py
 
-# возможно перед этим придется переключить каталог на тот, где лежит pyinstaller.exe, далее
+# войти в каталог, где лежит pyinstaller.exe, далее
 # pyinstaller --onefile --windowed --distpath "C:\Geobank" --workpath "C:\Geobank" D:\Cloud\Git\micromine-lab-protocols\lpc_main_form.py
+# либо указываем везде полные пути к файлам
+#venv\scripts\pyinstaller --onefile --windowed --distpath "C:\Geobank" --workpath "C:\Geobank" D:\Cloud\Git\micromine-lab-protocols\lpc_main_form.py
+
 class App:
     def __init__(self, root):
         """Создание интерфейса"""
@@ -128,7 +131,7 @@ class LabProtocol:
         self.dict = dict1
 
 def writeCSV(lp : LabProtocol,path_,sep_):
-    f = open(path_,'w',encoding='utf-8')
+    f = open(path_,'w',encoding='ansi')
     #если значение ключа в виде списка, то применяем индекс. Регулярные выражения подразумевают список на выходе. Если их не используем -- то убираем индексы
     t = 'Номер работы:' + sep_ + str(lp.dict['lab_job_no']) + '\n'
     f.write(t)
@@ -158,7 +161,7 @@ def writeCSV(lp : LabProtocol,path_,sep_):
     # поэтому используем лямбда функцию
     b.columns = ['lab_tag', 'sample_tag', 'assay']
     b['assay'] = b['assay'].apply(lambda x: round(x,3) if isinstance(x, float) else (x if isinstance(x,int) else x[:4]))
-    b.to_csv(path_, float_format='%.3f', sep=sep_, mode = 'a',header=False,index=False)
+    b.to_csv(path_, encoding='ansi', sep=sep_, mode = 'a',header=False,index=False)
 
 def parseExcelFile(path1, lab_id_, lab_method_):
     # every LAB_ID uses its parsing scheme cause has different protocol structure

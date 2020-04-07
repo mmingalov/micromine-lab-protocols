@@ -142,7 +142,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lpc_main_form.py</url>
-          <line>155</line>
+          <line>158</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
